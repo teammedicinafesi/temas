@@ -40,6 +40,9 @@ Vue.component('apuntes-panel',require('./apuntes/ApuntesPanel.vue').default);
 Vue.component('bibliografias-index',require('./bibliografias/BibliografiasIndex.vue').default);
 Vue.component('bibliografias-tabla',require('./bibliografias/BibliografiasTabla.vue').default);
 Vue.component('bibliografias-create',require('./bibliografias/BibliografiasCreate.vue').default);
+Vue.component('bibliografias-info',require('./bibliografias/BibliografiasInfo.vue').default);
+Vue.component('bibliografias-update',require('./bibliografias/BibliografiasUpdate.vue').default);
+Vue.component('bibliografias-desvincular',require('./bibliografias/BibliografiasDesvincular.vue').default);
 
 const app = new Vue({
     el: '#app',

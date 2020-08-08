@@ -2159,6 +2159,105 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/bibliografias/BibliografiasDesvincular.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/bibliografias/BibliografiasDesvincular.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      habilitar_boton: true,
+      habilitar: true,
+      mensaje_eliminar: ''
+    };
+  },
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('bibliografias', ['bibliografiax'])), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('temas', ['tema', 'bibliografias'])),
+  methods: {
+    deleteBibliografia: function deleteBibliografia() {
+      var _this = this;
+
+      this.habilitar_boton = false;
+      axios["delete"]('/bibliografias/delete/' + this.$route.params.id + '/' + this.bibliografiax.id).then(function (res) {
+        _this.habilitar_boton = true;
+        console.log(res.data);
+        var myQueryId = _this.bibliografiax.id;
+
+        var resultado = _this.bibliografias.find(function (busqueda) {
+          return busqueda.id === myQueryId;
+        });
+
+        var pos = _this.bibliografias.indexOf(resultado);
+
+        _this.bibliografias.splice(pos, 1);
+
+        _this.habilitar = false;
+        _this.mensaje_eliminar = res.data.mens;
+      })["catch"](function (err) {
+        _this.habilitar_boton = true;
+      });
+    }
+  },
+  watch: {
+    bibliografiax: function bibliografiax() {
+      this.habilitar_boton = true;
+      this.habilitar = true;
+      this.mensaje_eliminar = '';
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/bibliografias/BibliografiasIndex.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/bibliografias/BibliografiasIndex.vue?vue&type=script&lang=js& ***!
@@ -2197,6 +2296,56 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('temas', ['tema', 'bibliografias']))
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/bibliografias/BibliografiasInfo.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/bibliografias/BibliografiasInfo.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('bibliografias', ['bibliografiax']))
 });
 
 /***/ }),
@@ -2253,9 +2402,151 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('temas', ['tema', 'bibliografias']))
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('temas', ['tema', 'bibliografias'])),
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])('bibliografias', ['infoBibliografia', 'updateBibliografia', 'deleteBibliografia']))
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/bibliografias/BibliografiasUpdate.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/bibliografias/BibliografiasUpdate.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      titulo_new: '',
+      descripcion_new: '',
+      tipo_new: '',
+      cita_new: '',
+      link_new: '',
+      mensaje_bibliografia: '',
+      habilitar_boton: true
+    };
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('bibliografias', ['bibliografiax'])),
+  methods: {
+    updateBibliografia: function updateBibliografia() {
+      var _this = this;
+
+      if (this.titulo_new == '' || this.tipo_new == '' || this.cita_new == '') {
+        this.mensaje_bibliografia = 'Los campos Titulo, Tipo y Cita son obligatorios';
+        this.clase_alert = 'alert-warning';
+        this.habilitar_alert = true;
+        return false;
+      }
+
+      if (this.titulo_new.length < 3 || this.tipo_new.length < 3 || this.cita_new.length < 3) {
+        this.mensaje_bibliografia = 'El numero de caracteres minimo es de 3';
+        this.clase_alert = 'alert-warning';
+        this.habilitar_alert = true;
+        return false;
+      }
+
+      if (this.titulo_new.length > 200 || this.tipo_new.length > 11 || this.cita_new.length > 1000) {
+        this.mensaje_bibliografia = 'Se exedio en el numero de caracteres permitidos en un campo';
+        this.clase_alert = 'alert-warning';
+        this.habilitar_alert = true;
+        return false;
+      }
+
+      this.habilitar_boton = false;
+      axios.post('/bibliografias/update/' + this.bibliografiax.id, {
+        titulo: this.titulo_new,
+        descripcion: this.descripcion_new,
+        tipo: this.tipo_new,
+        cita: this.cita_new,
+        link: this.link_new
+      }).then(function (res) {
+        _this.habilitar_boton = true; //this.bibliografias.push(res.data.bibliografia)
+        //this.mensaje_bibliografia = res.data.mens
+
+        console.log(res.data);
+        _this.mensaje_bibliografia = res.data.mens;
+        _this.bibliografiax.titulo = _this.titulo_new;
+        _this.bibliografiax.descripcion = _this.descripcion_new;
+        _this.bibliografiax.tipo = _this.tipo_new;
+        _this.bibliografiax.cita = _this.cita_new;
+        _this.bibliografiax.link = _this.link_new;
+      })["catch"](function (err) {
+        _this.habilitar_boton = true;
+        console.log(err);
+      });
+    }
+  },
+  watch: {
+    bibliografiax: function bibliografiax() {
+      this.titulo_new = this.bibliografiax.titulo;
+      this.descripcion_new = this.bibliografiax.descripcion;
+      this.tipo_new = this.bibliografiax.tipo;
+      this.cita_new = this.bibliografiax.cita;
+      this.link_new = this.bibliografiax.link;
+    }
+  }
 });
 
 /***/ }),
@@ -40269,6 +40560,142 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/bibliografias/BibliografiasDesvincular.vue?vue&type=template&id=b90362f2&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/bibliografias/BibliografiasDesvincular.vue?vue&type=template&id=b90362f2& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "modalDelete",
+          tabindex: "-1",
+          "aria-labelledby": "exampleModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "modal-dialog modal-lg",
+            staticStyle: { "margin-top": "70px" }
+          },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-body" }, [
+                _vm.habilitar == true
+                  ? _c("div", [
+                      _vm._v('\t\t\n\t\t\t\t\t\t¿Desea desvincular a "'),
+                      _c("a", { staticClass: "text-danger" }, [
+                        _vm._v(_vm._s(_vm.bibliografiax.titulo))
+                      ]),
+                      _vm._v('" de este apunte?\n\t\t\t\t\t\t'),
+                      _c("br"),
+                      _vm._v(
+                        "\n\t\t\t\t\t\tSi lo hace todos los segmentos con los que haya sido relacionados se desvincularan\n\t\t\t\t\t"
+                      )
+                    ])
+                  : _c("div", [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t" +
+                          _vm._s(_vm.mensaje_eliminar) +
+                          "\n\t\t\t\t\t"
+                      )
+                    ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-footer" }, [
+                _vm.habilitar == true
+                  ? _c("div", [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-danger pt-1 pb-1",
+                          attrs: {
+                            type: "button",
+                            disabled: _vm.habilitar_boton == false
+                          },
+                          on: { click: _vm.deleteBibliografia }
+                        },
+                        [_vm._v("Aceptar")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-secondary pt-1 pb-1",
+                          attrs: { type: "button", "data-dismiss": "modal" }
+                        },
+                        [_vm._v("Close")]
+                      )
+                    ])
+                  : _c("div", [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-secondary pt-1 pb-1",
+                          attrs: { type: "button", "data-dismiss": "modal" }
+                        },
+                        [_vm._v("Close")]
+                      )
+                    ])
+              ])
+            ])
+          ]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "h5",
+        { staticClass: "modal-title", attrs: { id: "exampleModalLabel" } },
+        [_vm._v("Desvincular Bibliografia")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/bibliografias/BibliografiasIndex.vue?vue&type=template&id=ba89eb52&":
 /*!************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/bibliografias/BibliografiasIndex.vue?vue&type=template&id=ba89eb52& ***!
@@ -40349,6 +40776,124 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/bibliografias/BibliografiasInfo.vue?vue&type=template&id=d50e128e&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/bibliografias/BibliografiasInfo.vue?vue&type=template&id=d50e128e& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "modalInfo",
+          tabindex: "-1",
+          "aria-labelledby": "exampleModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "modal-dialog modal-lg",
+            staticStyle: { "margin-top": "70px" }
+          },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-body" }, [
+                _c("p", [
+                  _vm._v("Titulo: " + _vm._s(_vm.bibliografiax.titulo))
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Descripcion: " + _vm._s(_vm.bibliografiax.descripcion)
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("Tipo " + _vm._s(_vm.bibliografiax.tipo) + " ")
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("Cita " + _vm._s(_vm.bibliografiax.cita) + " ")
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("Link " + _vm._s(_vm.bibliografiax.link) + " ")
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._m(1)
+            ])
+          ]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "h5",
+        { staticClass: "modal-title", attrs: { id: "exampleModalLabel" } },
+        [_vm._v("Información de la Bibliografía")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-secondary pt-1 pb-1",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Cerrar")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/bibliografias/BibliografiasTabla.vue?vue&type=template&id=5c1de14f&":
 /*!************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/bibliografias/BibliografiasTabla.vue?vue&type=template&id=5c1de14f& ***!
@@ -40364,27 +40909,105 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("table", { staticClass: "table mt-3" }, [
-      _vm._m(0),
+  return _c(
+    "div",
+    [
+      _c("table", { staticClass: "table mt-3" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.bibliografias, function(bibliografia, index) {
+            return _c("tr", { key: index }, [
+              _c("td", [_vm._v(_vm._s(index + 1))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(bibliografia.titulo))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(bibliografia.tipo))]),
+              _vm._v(" "),
+              _c("td", [
+                _c("div", { staticStyle: { width: "100px" } }),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-sm btn-info pt-0 pb-0",
+                    attrs: {
+                      "data-toggle": "modal",
+                      "data-target": "#modalInfo"
+                    },
+                    on: {
+                      click: function($event) {
+                        return _vm.infoBibliografia(bibliografia)
+                      }
+                    }
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fas fa-info",
+                      staticStyle: { "font-size": ".9em", color: "white" }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-sm btn-primary pt-0 pb-0",
+                    attrs: {
+                      "data-toggle": "modal",
+                      "data-target": "#modalUpdate"
+                    },
+                    on: {
+                      click: function($event) {
+                        return _vm.updateBibliografia(bibliografia)
+                      }
+                    }
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fas fa-eraser",
+                      staticStyle: { "font-size": ".9em" }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-sm btn-danger pt-0 pb-0",
+                    attrs: {
+                      "data-toggle": "modal",
+                      "data-target": "#modalDelete"
+                    },
+                    on: {
+                      click: function($event) {
+                        return _vm.deleteBibliografia(bibliografia)
+                      }
+                    }
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fas fa-backspace",
+                      staticStyle: { "font-size": ".9em" }
+                    })
+                  ]
+                )
+              ])
+            ])
+          }),
+          0
+        )
+      ]),
       _vm._v(" "),
-      _c(
-        "tbody",
-        _vm._l(_vm.bibliografias, function(bibliografia, index) {
-          return _c("tr", { key: index }, [
-            _c("td", [_vm._v(_vm._s(index + 1))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(bibliografia.titulo))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(bibliografia.tipo))]),
-            _vm._v(" "),
-            _vm._m(1, true)
-          ])
-        }),
-        0
-      )
-    ])
-  ])
+      _c("bibliografias-info"),
+      _vm._v(" "),
+      _c("bibliografias-update"),
+      _vm._v(" "),
+      _c("bibliografias-desvincular")
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
@@ -40402,34 +41025,281 @@ var staticRenderFns = [
         _c("th", [_vm._v("Acciones")])
       ])
     ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/bibliografias/BibliografiasUpdate.vue?vue&type=template&id=791a7494&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/bibliografias/BibliografiasUpdate.vue?vue&type=template&id=791a7494& ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "modalUpdate",
+          tabindex: "-1",
+          "aria-labelledby": "exampleModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "modal-dialog modal-lg",
+            staticStyle: { "margin-top": "70px" }
+          },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-body" }, [
+                _c("form", [
+                  _c("label", { staticClass: "mb-0", attrs: { for: "" } }, [
+                    _vm._v("Título")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.titulo_new,
+                        expression: "titulo_new"
+                      }
+                    ],
+                    staticClass: "form-control form-control-sm mb-3",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.titulo_new },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.titulo_new = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.descripcion_new,
+                        expression: "descripcion_new"
+                      }
+                    ],
+                    staticClass: "form-control form-control-sm mb-3",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.descripcion_new },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.descripcion_new = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "mb-0" }, [_vm._v("Tipo")]),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.tipo_new,
+                          expression: "tipo_new"
+                        }
+                      ],
+                      staticClass: "form-control form-control-sm mb-3",
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.tipo_new = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        }
+                      }
+                    },
+                    [
+                      _c("option", { attrs: { value: "articulo" } }, [
+                        _vm._v("Articulo")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "libro" } }, [
+                        _vm._v("Libro")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "sitio_web" } }, [
+                        _vm._v("Sitio Web")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "gpc" } }, [
+                        _vm._v("Guia de Practica Clínica")
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "mb-0", attrs: { for: "" } }, [
+                    _vm._v("Cita")
+                  ]),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.cita_new,
+                        expression: "cita_new"
+                      }
+                    ],
+                    staticClass: "form-control mb-3",
+                    attrs: { rows: "2" },
+                    domProps: { value: _vm.cita_new },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.cita_new = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.link_new,
+                        expression: "link_new"
+                      }
+                    ],
+                    staticClass: "form-control form-control-sm mb-3",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.link_new },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.link_new = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-footer" }, [
+                _c("small", { staticStyle: { "font-size": ".9em" } }, [
+                  _vm._v(" " + _vm._s(_vm.mensaje_bibliografia))
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary pt-1 pb-1",
+                    attrs: {
+                      type: "button",
+                      disabled: _vm.habilitar_boton == false
+                    },
+                    on: { click: _vm.updateBibliografia }
+                  },
+                  [_vm._v("Aceptar")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-secondary pt-1 pb-1",
+                    attrs: { type: "button", "data-dismiss": "modal" }
+                  },
+                  [_vm._v("Close")]
+                )
+              ])
+            ])
+          ]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "h5",
+        { staticClass: "modal-title", attrs: { id: "exampleModalLabel" } },
+        [_vm._v("Modificar datos de la Bibliografía")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("div", { staticStyle: { width: "100px" } }),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-sm btn-info pt-0 pb-0" }, [
-        _c("i", {
-          staticClass: "fas fa-info",
-          staticStyle: { "font-size": ".9em", color: "white" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-sm btn-primary pt-0 pb-0" }, [
-        _c("i", {
-          staticClass: "fas fa-eraser",
-          staticStyle: { "font-size": ".9em" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-sm btn-danger pt-0 pb-0" }, [
-        _c("i", {
-          staticClass: "fas fa-backspace",
-          staticStyle: { "font-size": ".9em" }
-        })
-      ])
+    return _c("label", { staticClass: "mb-0", attrs: { for: "" } }, [
+      _vm._v("Descripción "),
+      _c("small", [_vm._v("(opcional)")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "mb-0", attrs: { for: "" } }, [
+      _vm._v("Link "),
+      _c("small", [_vm._v("(opcional)")])
     ])
   }
 ]
@@ -59725,6 +60595,9 @@ Vue.component('apuntes-panel', __webpack_require__(/*! ./apuntes/ApuntesPanel.vu
 Vue.component('bibliografias-index', __webpack_require__(/*! ./bibliografias/BibliografiasIndex.vue */ "./resources/js/bibliografias/BibliografiasIndex.vue")["default"]);
 Vue.component('bibliografias-tabla', __webpack_require__(/*! ./bibliografias/BibliografiasTabla.vue */ "./resources/js/bibliografias/BibliografiasTabla.vue")["default"]);
 Vue.component('bibliografias-create', __webpack_require__(/*! ./bibliografias/BibliografiasCreate.vue */ "./resources/js/bibliografias/BibliografiasCreate.vue")["default"]);
+Vue.component('bibliografias-info', __webpack_require__(/*! ./bibliografias/BibliografiasInfo.vue */ "./resources/js/bibliografias/BibliografiasInfo.vue")["default"]);
+Vue.component('bibliografias-update', __webpack_require__(/*! ./bibliografias/BibliografiasUpdate.vue */ "./resources/js/bibliografias/BibliografiasUpdate.vue")["default"]);
+Vue.component('bibliografias-desvincular', __webpack_require__(/*! ./bibliografias/BibliografiasDesvincular.vue */ "./resources/js/bibliografias/BibliografiasDesvincular.vue")["default"]);
 var app = new Vue({
   el: '#app',
   router: _assets_router_js__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -59850,6 +60723,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vuex_modulos_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../vuex/modulos.js */ "./resources/js/vuex/modulos.js");
 /* harmony import */ var _vuex_submodulos_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../vuex/submodulos.js */ "./resources/js/vuex/submodulos.js");
 /* harmony import */ var _vuex_temas_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../vuex/temas.js */ "./resources/js/vuex/temas.js");
+/* harmony import */ var _vuex_bibliografias_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../vuex/bibliografias.js */ "./resources/js/vuex/bibliografias.js");
+
 
 
 
@@ -59862,7 +60737,8 @@ Vue.use(vuex__WEBPACK_IMPORTED_MODULE_0__["default"]);
   modules: {
     modulos: _vuex_modulos_js__WEBPACK_IMPORTED_MODULE_1__["default"],
     submodulos: _vuex_submodulos_js__WEBPACK_IMPORTED_MODULE_2__["default"],
-    temas: _vuex_temas_js__WEBPACK_IMPORTED_MODULE_3__["default"]
+    temas: _vuex_temas_js__WEBPACK_IMPORTED_MODULE_3__["default"],
+    bibliografias: _vuex_bibliografias_js__WEBPACK_IMPORTED_MODULE_4__["default"]
   }
 }));
 
@@ -59937,6 +60813,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/bibliografias/BibliografiasDesvincular.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/bibliografias/BibliografiasDesvincular.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _BibliografiasDesvincular_vue_vue_type_template_id_b90362f2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BibliografiasDesvincular.vue?vue&type=template&id=b90362f2& */ "./resources/js/bibliografias/BibliografiasDesvincular.vue?vue&type=template&id=b90362f2&");
+/* harmony import */ var _BibliografiasDesvincular_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BibliografiasDesvincular.vue?vue&type=script&lang=js& */ "./resources/js/bibliografias/BibliografiasDesvincular.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _BibliografiasDesvincular_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _BibliografiasDesvincular_vue_vue_type_template_id_b90362f2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _BibliografiasDesvincular_vue_vue_type_template_id_b90362f2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/bibliografias/BibliografiasDesvincular.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/bibliografias/BibliografiasDesvincular.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/bibliografias/BibliografiasDesvincular.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasDesvincular_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./BibliografiasDesvincular.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/bibliografias/BibliografiasDesvincular.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasDesvincular_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/bibliografias/BibliografiasDesvincular.vue?vue&type=template&id=b90362f2&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/bibliografias/BibliografiasDesvincular.vue?vue&type=template&id=b90362f2& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasDesvincular_vue_vue_type_template_id_b90362f2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./BibliografiasDesvincular.vue?vue&type=template&id=b90362f2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/bibliografias/BibliografiasDesvincular.vue?vue&type=template&id=b90362f2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasDesvincular_vue_vue_type_template_id_b90362f2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasDesvincular_vue_vue_type_template_id_b90362f2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/bibliografias/BibliografiasIndex.vue":
 /*!***********************************************************!*\
   !*** ./resources/js/bibliografias/BibliografiasIndex.vue ***!
@@ -60006,6 +60951,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/bibliografias/BibliografiasInfo.vue":
+/*!**********************************************************!*\
+  !*** ./resources/js/bibliografias/BibliografiasInfo.vue ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _BibliografiasInfo_vue_vue_type_template_id_d50e128e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BibliografiasInfo.vue?vue&type=template&id=d50e128e& */ "./resources/js/bibliografias/BibliografiasInfo.vue?vue&type=template&id=d50e128e&");
+/* harmony import */ var _BibliografiasInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BibliografiasInfo.vue?vue&type=script&lang=js& */ "./resources/js/bibliografias/BibliografiasInfo.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _BibliografiasInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _BibliografiasInfo_vue_vue_type_template_id_d50e128e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _BibliografiasInfo_vue_vue_type_template_id_d50e128e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/bibliografias/BibliografiasInfo.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/bibliografias/BibliografiasInfo.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/bibliografias/BibliografiasInfo.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./BibliografiasInfo.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/bibliografias/BibliografiasInfo.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/bibliografias/BibliografiasInfo.vue?vue&type=template&id=d50e128e&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/bibliografias/BibliografiasInfo.vue?vue&type=template&id=d50e128e& ***!
+  \*****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasInfo_vue_vue_type_template_id_d50e128e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./BibliografiasInfo.vue?vue&type=template&id=d50e128e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/bibliografias/BibliografiasInfo.vue?vue&type=template&id=d50e128e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasInfo_vue_vue_type_template_id_d50e128e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasInfo_vue_vue_type_template_id_d50e128e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/bibliografias/BibliografiasTabla.vue":
 /*!***********************************************************!*\
   !*** ./resources/js/bibliografias/BibliografiasTabla.vue ***!
@@ -60070,6 +61084,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasTabla_vue_vue_type_template_id_5c1de14f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasTabla_vue_vue_type_template_id_5c1de14f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/bibliografias/BibliografiasUpdate.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/bibliografias/BibliografiasUpdate.vue ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _BibliografiasUpdate_vue_vue_type_template_id_791a7494___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BibliografiasUpdate.vue?vue&type=template&id=791a7494& */ "./resources/js/bibliografias/BibliografiasUpdate.vue?vue&type=template&id=791a7494&");
+/* harmony import */ var _BibliografiasUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BibliografiasUpdate.vue?vue&type=script&lang=js& */ "./resources/js/bibliografias/BibliografiasUpdate.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _BibliografiasUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _BibliografiasUpdate_vue_vue_type_template_id_791a7494___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _BibliografiasUpdate_vue_vue_type_template_id_791a7494___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/bibliografias/BibliografiasUpdate.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/bibliografias/BibliografiasUpdate.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/bibliografias/BibliografiasUpdate.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./BibliografiasUpdate.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/bibliografias/BibliografiasUpdate.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/bibliografias/BibliografiasUpdate.vue?vue&type=template&id=791a7494&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/bibliografias/BibliografiasUpdate.vue?vue&type=template&id=791a7494& ***!
+  \*******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasUpdate_vue_vue_type_template_id_791a7494___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./BibliografiasUpdate.vue?vue&type=template&id=791a7494& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/bibliografias/BibliografiasUpdate.vue?vue&type=template&id=791a7494&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasUpdate_vue_vue_type_template_id_791a7494___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BibliografiasUpdate_vue_vue_type_template_id_791a7494___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -62049,6 +63132,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TemasUpdate_vue_vue_type_template_id_02366ec8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/vuex/bibliografias.js":
+/*!********************************************!*\
+  !*** ./resources/js/vuex/bibliografias.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: {
+    bibliografiax: ''
+  },
+  mutations: {
+    infoBibliografia: function infoBibliografia(state, value) {
+      state.bibliografiax = value; //console.log(state.bibliografiax)
+    },
+    updateBibliografia: function updateBibliografia(state, value) {
+      state.bibliografiax = value;
+    },
+    deleteBibliografia: function deleteBibliografia(state, value) {
+      state.bibliografiax = value;
+    }
+  }
+});
 
 /***/ }),
 

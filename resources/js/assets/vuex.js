@@ -2,6 +2,7 @@ import Vuex from 'vuex';
 import modulos from '../vuex/modulos.js';
 import submodulos from '../vuex/submodulos.js';
 import temas from '../vuex/temas.js';
+import bibliografias from '../vuex/bibliografias.js';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -11,6 +12,7 @@ export default new Vuex.Store({
     modules:{
         modulos,
         submodulos,
-        temas
+        temas,
+        bibliografias
     }
 })

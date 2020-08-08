@@ -48,7 +48,9 @@ Route::delete('/subtemas/delete_apunte/{id}','dashboard\SubtemasController@delet
 
 Route::post('/elementos/create/{id}','dashboard\ElementosController@store');
 
-Route::post('/bibliografias/create/{id_tema}','dashboard\BibliografiasController@store');
+Route::post('/bibliografias/create/{id_b}','dashboard\BibliografiasController@store');
+Route::post('/bibliografias/update/{id_b}','dashboard\BibliografiasController@update');
+Route::delete('/bibliografias/delete/{id_tema}/{id_b}','dashboard\BibliografiasController@delete');
 
 Route::get('/memo', function () {
     //$subtema = App\Subtema::findOrFail(6);

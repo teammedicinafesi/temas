@@ -49,11 +49,11 @@
                 </div>-->
         </div>
 
-        <footer class="fot fixed-bottom">
+        <!--<footer class="fot fixed-bottom" style="height:40px">
             <div class="container-xl">
-                <p class="mt-3 text-muted">Repository Web - 2020</p>
+                <p class="mt-2 text-muted">Repository Web - 2020</p>
             </div>
-        </footer>
+        </footer>-->
     </div>
 
 </body>
